@@ -1,8 +1,8 @@
 <template>
   <q-page class="row justify-start items-start content-start bg-grey-4 q-pa-lg">
-    <div class="q-display-2 q-pa-sm text-faded col-12">Dogdex.org</div>
+    <div class="q-display-2 q-pa-sm text-faded col-12 q-pb-xl">Dogdex.org</div>
     <div
-      class="q-pt-lg"
+      class="col-3"
       v-for="(dog, index) in dogs"
       :key="index"
     >

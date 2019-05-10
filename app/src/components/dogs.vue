@@ -4,8 +4,8 @@
       <q-card-main class="no-padding">
         <img
           :src="dog.image"
-          width="200"
-          height="160"
+          width="100%"
+          height="180"
         >
       </q-card-main>
       <q-card-title class="text-center no-padding bg-light text-dark">

@@ -3,15 +3,15 @@
     <p>
       <img
         src="~assets/sad.svg"
-        style="width:30vw;max-width:150px;"
+        style="width: 30vw; max-width: 150px;"
       >
     </p>
-    <p class="text-faded">Sorry, nothing here...<strong>(404)</strong></p>
+    <p class="text-faded">Página não encontrada...<strong>(404)</strong></p>
     <q-btn
-      color="secondary"
+      color="purple"
       style="width:200px;"
       @click="$router.push('/')"
-    >Go back</q-btn>
+    >Voltar</q-btn>
   </div>
 </template>
 

@@ -1,22 +1,20 @@
-
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MyLayout.vue'),
+    component: () => import('layouts/layout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '', component: () => import('pages/index.vue') }
     ]
   },
   {
-    path: '/newdog',
-    component: () => import('layouts/MyLayout.vue'),
+    path: '/new',
+    component: () => import('layouts/layout.vue'),
     children: [
       { path: '', component: () => import('pages/newDog.vue') }
     ]
   }
 ]
 
-// Always leave this as last one
 if (process.env.MODE !== 'ssr') {
   routes.push({
     path: '*',
