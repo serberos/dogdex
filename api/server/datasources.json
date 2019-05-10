@@ -1,0 +1,12 @@
+{
+  "dogdex": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "url": "",
+    "database": "dogdex",
+    "password": "abc123",
+    "name": "dogdex",
+    "user": "jairo",
+    "connector": "mysql"
+  }
+}
