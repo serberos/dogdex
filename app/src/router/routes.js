@@ -6,6 +6,13 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Index.vue') }
     ]
+  },
+  {
+    path: '/newdog',
+    component: () => import('layouts/MyLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/newDog.vue') }
+    ]
   }
 ]
 
