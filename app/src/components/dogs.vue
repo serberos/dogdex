@@ -8,7 +8,10 @@
           height="180"
         >
       </q-card-main>
-      <q-card-title class="text-center no-padding bg-light text-dark">
+      <q-card-title
+        class="text-center no-padding bg-light text-dark"
+        @click.native="$emit('detail', dog.name)"
+      >
         {{ dog.name.substring(0,1).toUpperCase() + dog.name.substring(1)}}
       </q-card-title>
     </q-card>

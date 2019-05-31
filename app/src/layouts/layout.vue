@@ -12,6 +12,38 @@
           <q-icon name="menu" />
         </q-btn>
         <q-toolbar-title>Dogdex.org</q-toolbar-title>
+        <q-btn
+          v-if="filterSize"
+          icon="fas fa-eraser"
+          round
+          flat
+          @click="filterSize = ''"
+        />
+        <q-btn
+          class="q-mr-md"
+          icon="fas fa-filter"
+          round
+          flat
+        >
+          <q-popover
+            anchor="bottom middle"
+            self="top middle"
+          >
+            <q-list
+              class="no-padding"
+              separator
+              link
+            >
+              <q-item
+                v-for="(dog, index) in sizes"
+                :key="index"
+                @click.native="filterSize = dog.value"
+              >
+                <q-item-main :label="dog.label" />
+              </q-item>
+            </q-list>
+          </q-popover>
+        </q-btn>
         <q-search
           v-model="search"
           color="none"
@@ -40,7 +72,10 @@
     </q-layout-drawer>
 
     <q-page-container>
-      <router-view :search="search" />
+      <router-view
+        :search="search"
+        :filterSize="filterSize"
+      />
     </q-page-container>
   </q-layout>
 </template>
@@ -51,7 +86,13 @@ export default {
   data () {
     return {
       leftDrawerOpen: this.$q.platform.is.desktop,
-      search: ''
+      search: '',
+      sizes: [
+        { label: 'Pequeno porte', value: 'p' },
+        { label: 'Médio porte', value: 'm' },
+        { label: 'Grande porte', value: 'g' }
+      ],
+      filterSize: ''
     }
   }
 }
