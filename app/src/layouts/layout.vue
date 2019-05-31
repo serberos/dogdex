@@ -11,6 +11,13 @@
         >
           <q-icon name="menu" />
         </q-btn>
+        <q-toolbar-title>Dogdex.org</q-toolbar-title>
+        <q-search
+          v-model="search"
+          color="none"
+          inverted
+          autofocus
+        />
       </q-toolbar>
     </q-layout-header>
 
@@ -33,7 +40,7 @@
     </q-layout-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view :search="search" />
     </q-page-container>
   </q-layout>
 </template>
@@ -43,7 +50,8 @@ export default {
   name: 'MyLayout',
   data () {
     return {
-      leftDrawerOpen: this.$q.platform.is.desktop
+      leftDrawerOpen: this.$q.platform.is.desktop,
+      search: ''
     }
   }
 }
